@@ -13,4 +13,8 @@ export class DbzService {
   public async getMembers(): Promise<DbzMembers[]> {
     return this.httpClient.get<DbzMembers[]>(`${this.baseUrl}dbzmembers`).toPromise();
   }
+
+  public async addMember(member: DbzMembers): Promise<DbzMembers> {
+    return this.httpClient.post<DbzMembers>(`${this.baseUrl}dbzmembers`, member).toPromise();
+  }
 }

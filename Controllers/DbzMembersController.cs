@@ -29,5 +29,15 @@ namespace capstone.Controllers
 
             return _context.DbzMembers;
         }
+
+        [HttpPost]
+        public DbzMember Post([FromBody]DbzMember member)
+        {
+            //member.UserId = HttpContext.User.FindFirst*(ClaimTypes.NameIdentifier).Value;
+            _context.Add(member);
+            _context.SaveChanges();
+
+            return member;
+        }
     }
 }

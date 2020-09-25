@@ -21,4 +21,9 @@ export class DbzComponent implements OnInit {
     this.dbzMembers = await this.dbzService.getMembers();
   }
 
+  public async addMember() {
+    const newMember = await this.dbzService.addMember(this.newMember);
+    this.dbzMembers.push(newMember);
+  }
+
 }
