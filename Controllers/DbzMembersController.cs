@@ -13,21 +13,21 @@ namespace capstone.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class DbzMemberController : ControllerBase
+    public class DbzMembersController : ControllerBase
     {
         private ApplicationDbContext _context;
 
-        public DbzMemberController(ApplicationDbContext context)
+        public DbzMembersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public <IEnumerable<DbzMember> Get()
+        public IEnumerable<DbzMember> Get()
         {
-            var userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            //var userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            return _context.DbzMembers.Where(m => m.UserId == userId);
+            return _context.DbzMembers;
         }
     }
 }
