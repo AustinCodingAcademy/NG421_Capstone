@@ -10,6 +10,11 @@ import { DbzMembers } from '../interfaces/dbz-member';
 export class DbzComponent implements OnInit {
 
   public dbzMembers: DbzMembers[];
+  public newMember: DbzMembers = {
+    id: undefined,
+    name: '',
+    attack: '',
+  };
   constructor(private dbzService: DbzService) { }
 
   async ngOnInit() {
