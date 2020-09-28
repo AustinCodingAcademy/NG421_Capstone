@@ -7,7 +7,8 @@
             <th>Id</th>
             <th>Name</th>
             <th>Attacks</th>
-        
+            <th>Defense</th>
+            <th>Notes</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +16,8 @@
             <td>{{member.id}}</td>
             <td>{{member.name}}</td>
             <td>{{member.attack}}</td>
+            <td>{{member.defense}}</td>
+            <td>{{member.notes}}</td>
         </tr>
     </tbody>
 </table>
@@ -26,6 +29,14 @@
 <div class="row">
     <div class="col-2"><label>Attack</label></div>
     <div class="col-6"><input type="text" [(ngModel)]="newMember.attack"></div>
+</div>
+<div class="row">
+    <div class="col-2"><label>Defense</label></div>
+    <div class="col-6"><input type="text" [(ngModel)]="newMember.defense"></div>
+</div>
+<div class="row">
+    <div class="col-2"><label>Notes</label></div>
+    <div class="col-6"><input type="text" [(ngModel)]="newMember.notes"></div>
 </div>
 <div class="row">
     <div class="col-6"><button class="btn btn-primary" (click)="addMember()">Save</button></div>

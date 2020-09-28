@@ -14,6 +14,8 @@ export class DbzComponent implements OnInit {
     id: undefined,
     name: '',
     attack: '',
+    defense: '',
+    notes: '',
   };
   constructor(private dbzService: DbzService) { }
 
