@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using capstone.Data;
 
 namespace capstone.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200924180139_AddDbzMember")]
+    partial class AddDbzMember
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -303,13 +305,7 @@ namespace capstone.Data.Migrations
                     b.Property<string>("Attack")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Defense")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Notes")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserId")
@@ -320,22 +316,6 @@ namespace capstone.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("DbzMembers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Attack = "Spirit Bomb, Kamehameha",
-                            Name = "Goku",
-                            UserId = "00973448-2f4b-44ec-a2d9-dbbc9663eb93"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Attack = "Galick Gun",
-                            Name = "Vegeta",
-                            UserId = "00973448-2f4b-44ec-a2d9-dbbc9663eb93"
-                        });
                 });
 
             modelBuilder.Entity("capstone.Models.Student", b =>
